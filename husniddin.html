@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+    min-height:100vh;
+    color:white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 80px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px;
+    flex-wrap:wrap;
+}
+
+.text{
+    max-width:550px;
+}
+
+.text h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.text p{
+    font-size:18px;
+    line-height:30px;
+    color:#d1d5db;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform:translateY(-4px);
+}
+
+.image img{
+    width:480px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:50px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:280px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,.2);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#d1d5db;
+    line-height:25px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#cbd5e1;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">HUSNIDDIN</div>
+
+    <nav>
+        <a href="#">Bosh sahifa</a>
+        <a href="#">Xizmatlar</a>
+        <a href="#">Loyihalar</a>
+        <a href="#">Bog'lanish</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+<div class="text">
+    <h1>Kelajakni birga yarataylik</h1>
+
+    <p>
+        Zamonaviy dizayn, tezkor ishlash va professional yechimlar.
+        Sizning biznesingiz uchun eng yaxshi web saytlarni yaratamiz.
+    </p>
+
+    <a href="#" class="btn">Boshlash</a>
+</div>
+
+<div class="image">
+    <img src="https://picsum.photos/500/400" alt="">
+</div>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+    <h2>⚡ Tezkor</h2>
+    <p>Saytingiz yuqori tezlikda ishlaydi va barcha qurilmalarga moslashadi.</p>
+</div>
+
+<div class="card">
+    <h2>🎨 Zamonaviy</h2>
+    <p>Minimalistik va professional UI/UX dizayn asosida ishlab chiqiladi.</p>
+</div>
+
+<div class="card">
+    <h2>🔒 Xavfsiz</h2>
+    <p>Eng so'nggi texnologiyalar yordamida xavfsizlik ta'minlanadi.</p>
+</div>
+
+</section>
+
+<footer>
+    © 2026 Husniddin | Barcha huquqlar himoyalangan.
+</footer>
+
+</body>
+</html>
