@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Market</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-btn{
+    background:white;
+    color:#0d6efd;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:10px;
+}
+
+.price{
+    color:red;
+    margin:10px;
+    font-size:18px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#084298;
+}
+
+/* CART */
+.cart{
+    position:fixed;
+    right:-400px;
+    top:0;
+    width:350px;
+    height:100%;
+    background:white;
+    box-shadow:-5px 0 15px rgba(0,0,0,0.3);
+    padding:15px;
+    transition:0.3s;
+    overflow-y:auto;
+}
+
+.cart.active{
+    right:0;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #ddd;
+    padding:8px 0;
+}
+
+.total{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>🛒 Super Market</h2>
+<div class="cart-btn" onclick="toggleCart()">
+🛍 Savat: <span id="count">0</span>
+</div>
+</header>
+
+<div class="products" id="products"></div>
+
+<!-- CART -->
+<div class="cart" id="cartBox">
+<h2>🛍 Savat</h2>
+<div id="cartItems"></div>
+<div class="total">Jami: $<span id="total">0</span></div>
+</div>
+
+<script>
+
+let cart = [];
+let total = 0;
+
+const products = [
+{ id:1, name:"Laptop", price:850, img:"https://via.placeholder.com/300x200?text=Laptop" },
+{ id:2, name:"Telefon", price:600, img:"https://via.placeholder.com/300x200?text=Telefon" },
+{ id:3, name:"TV", price:900, img:"https://via.placeholder.com/300x200?text=TV" },
+{ id:4, name:"Quloqchin", price:80, img:"https://via.placeholder.com/300x200?text=Quloqchin" },
+{ id:5, name:"Soat", price:150, img:"https://via.placeholder.com/300x200?text=Soat" },
+{ id:6, name:"Kamera", price:1200, img:"https://via.placeholder.com/300x200?text=Kamera" }
+];
+
+let html = "";
+
+products.forEach(p=>{
+html += `
+<div class="card">
+<img src="${p.img}">
+<h3>${p.name}</h3>
+<div class="price">$${p.price}</div>
+<button onclick="add(${p.id})">Savatga qo‘shish</button>
+</div>
+`;
+});
+
+document.getElementById("products").innerHTML = html;
+
+/* ADD */
+function add(id){
+let p = products.find(x=>x.id===id);
+cart.push(p);
+total += p.price;
+update();
+}
+
+/* REMOVE */
+function remove(i){
+total -= cart[i].price;
+cart.splice(i,1);
+update();
+}
+
+/* UPDATE */
+function update(){
+document.getElementById("count").innerText = cart.length;
+document.getElementById("total").innerText = total;
+
+let c = "";
+cart.forEach((p,i)=>{
+c += `
+<div class="item">
+<span>${p.name} - $${p.price}</span>
+<button onclick="remove(${i})">X</button>
+</div>
+`;
+});
+
+document.getElementById("cartItems").innerHTML = c;
+}
+
+/* CART OPEN */
+function toggleCart(){
+document.getElementById("cartBox").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
