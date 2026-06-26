@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarkShop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#111827;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+    border-bottom:1px solid #1e293b;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:800;
+    background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(rgba(15,23,42,.8),rgba(15,23,42,.9)),
+    url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+    color:white;
+    text-decoration:none;
+    padding:15px 40px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin:70px 0 40px;
+}
+
+.products{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.product{
+    background:#1e293b;
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+    border:1px solid #334155;
+}
+
+.product:hover{
+    transform:translateY(-10px);
+}
+
+.product img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h3{
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:24px;
+    color:#38bdf8;
+    font-weight:700;
+}
+
+.buy{
+    display:block;
+    margin-top:15px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px;
+    border-radius:10px;
+}
+
+.discount{
+    width:90%;
+    margin:70px auto;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.discount h2{
+    font-size:42px;
+}
+
+footer{
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    background:#111827;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:42px;
+    }
+
+    nav{
+        display:none;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">DARKSHOP</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Kategoriya</a>
+        <a href="#">Aloqa</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Premium Texnologiyalar Do‘koni</h1>
+    <p>iPhone, MacBook, Smart Watch va aksessuarlar</p>
+    <a href="#" class="btn">Xarid Boshlash</a>
+</section>
+
+<h2 class="section-title">Mashhur Mahsulotlar</h2>
+
+<div class="products">
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80">
+        <div class="info">
+            <h3>iPhone 16 Pro Max</h3>
+            <div class="price">$1299</div>
+            <a href="#" class="buy">Sotib Olish</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80">
+        <div class="info">
+            <h3>MacBook Pro M4</h3>
+            <div class="price">$2499</div>
+            <a href="#" class="buy">Sotib Olish</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80">
+        <div class="info">
+            <h3>Apple Watch Ultra</h3>
+            <div class="price">$799</div>
+            <a href="#" class="buy">Sotib Olish</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="discount">
+    <h2>🔥 50% Gacha Chegirma</h2>
+    <p>Faqat bugun uchun maxsus takliflar</p>
+</div>
+
+<footer>
+    © 2026 DARKSHOP. Barcha huquqlar himoyalangan.
+</footer>
+
+</body>
+</html>
